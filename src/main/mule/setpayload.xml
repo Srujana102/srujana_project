@@ -29,10 +29,12 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 		<ee:transform doc:name="Transform Message" doc:id="e7faf12e-7b6e-4421-b7d3-5f12d032a7e0" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
+output application/java
 ---
-
-payload]]></ee:set-payload>
+{
+	"message" : payload
+} 
+]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="637760e3-7658-48b3-92b6-c17d3b6d595f" />
